@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
-    <title>时隅相机 - 用户协议</title>
+    <title>Shiyu Camera — Terms of Use</title>
     <style>
         :root {
             --bg: #f8f9fa;
@@ -25,19 +24,30 @@
             padding: 24px 16px 64px;
         }
         .container { max-width: var(--max); margin: 0 auto; }
-        header {
-            text-align: center;
-            padding: 40px 0 32px;
-        }
-        .logo {
-            font-size: 48px;
+        .lang-switch {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
             margin-bottom: 8px;
         }
-        h1 { font-size: 28px; font-weight: 700; margin-bottom: 4px; }
-        header .sub {
+        .lang-switch button {
+            border: 1px solid var(--border);
+            background: var(--card);
             color: var(--sub);
-            font-size: 14px;
+            border-radius: 999px;
+            padding: 6px 14px;
+            font-size: 13px;
+            cursor: pointer;
         }
+        .lang-switch button.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+        }
+        header { text-align: center; padding: 24px 0 32px; }
+        .logo { font-size: 48px; margin-bottom: 8px; }
+        h1 { font-size: 28px; font-weight: 700; margin-bottom: 4px; }
+        header .sub { color: var(--sub); font-size: 14px; }
         .card {
             background: var(--card);
             border: 1px solid var(--border);
@@ -45,134 +55,177 @@
             padding: 28px 24px;
             margin-bottom: 20px;
         }
-        h2 {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: var(--text);
-        }
-        p, li {
-            font-size: 15px;
-            color: var(--text);
-            margin-bottom: 8px;
-        }
+        h2 { font-size: 18px; font-weight: 600; margin-bottom: 12px; }
+        p, li { font-size: 15px; margin-bottom: 8px; }
         ul { padding-left: 20px; margin-bottom: 8px; }
         li { margin-bottom: 4px; }
-        .update {
-            color: var(--sub);
-            font-size: 13px;
-            text-align: center;
-            margin-top: 32px;
-        }
-        footer {
-            text-align: center;
-            margin-top: 24px;
-        }
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-            font-size: 14px;
-        }
-        footer a:hover { text-decoration: underline; }
+        .subtitle { color: var(--sub); font-size: 13px; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .update { color: var(--sub); font-size: 13px; text-align: center; margin-top: 32px; }
+        footer { text-align: center; margin-top: 24px; }
+        footer a { color: var(--accent); font-size: 14px; margin: 0 10px; }
+        [data-lang] { display: none; }
+        html[lang="zh-CN"] [data-lang="zh"],
+        html[lang="en"] [data-lang="en"] { display: block; }
+        html[lang="zh-CN"] footer [data-lang="zh"],
+        html[lang="en"] footer [data-lang="en"] { display: inline; }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="lang-switch">
+            <button type="button" data-set-lang="zh">中文</button>
+            <button type="button" data-set-lang="en">English</button>
+        </div>
 
         <header>
             <div class="logo">📷</div>
-            <h1>时隅相机</h1>
-            <div class="sub">用户协议</div>
+            <h1 data-lang="zh">时隅相机</h1>
+            <h1 data-lang="en">Shiyu Camera</h1>
+            <div class="sub" data-lang="zh">用户协议</div>
+            <div class="sub" data-lang="en">Terms of Use</div>
         </header>
 
-        <div class="card">
-            <h2>1. 接受条款</h2>
-            <p>
-                下载、安装或使用时隅相机（以下简称"本 App"），即表示您同意本用户协议的全部条款。
-                如果您不同意任何条款，请停止使用并卸载本 App。
-            </p>
+        <div data-lang="zh">
+            <div class="card">
+                <h2>1. 接受条款</h2>
+                <p>下载、安装或使用时隅相机（以下简称“本 App”），即表示您同意本用户协议的全部条款。如果您不同意任何条款，请停止使用并卸载本 App。</p>
+            </div>
+            <div class="card">
+                <h2>2. 服务说明</h2>
+                <p>本 App 是一款 iOS 平台的水印工具，提供以下核心功能：</p>
+                <ul>
+                    <li>实时拍摄照片和视频并自动叠加时间、位置、天气水印</li>
+                    <li>读取相册中已有媒体文件的拍摄元数据，为其补加水印</li>
+                    <li>提供多套可自定义的水印模板</li>
+                </ul>
+                <p class="subtitle">所有功能在设备本地运行，无需注册账号，不依赖我们自建的后端服务。</p>
+            </div>
+            <div class="card">
+                <h2>3. 用户责任</h2>
+                <ul>
+                    <li>您应确保拥有所处理照片/视频的合法权利（如他人肖像，请先取得授权）</li>
+                    <li>您不得将本 App 用于任何违法目的</li>
+                    <li>您应自行备份原始媒体文件，我们对因使用本 App 导致的数据丢失不承担责任</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h2>4. 知识产权</h2>
+                <ul>
+                    <li>本 App 的代码、界面设计、图标等知识产权归开发者所有</li>
+                    <li>您通过本 App 生成的水印照片/视频，其版权归您所有</li>
+                    <li>天气数据由 Apple Weather 提供，受 Apple 服务条款约束</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h2>5. 免责声明</h2>
+                <ul>
+                    <li>本 App 按“现状”提供，不提供任何明示或默示的保证</li>
+                    <li>天气数据依赖 Apple WeatherKit，我们不对天气数据的准确性、及时性或可用性作任何保证；天气数据缺失时本 App 会自动隐藏相关水印字段</li>
+                    <li>位置信息依赖设备 GPS，室内或信号不佳时定位精度可能受到影响</li>
+                    <li>我们不保证本 App 在所有设备上完全无错误或无中断地运行</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h2>6. 责任限制</h2>
+                <p>在法律允许的最大范围内，开发者不对因使用或无法使用本 App 而产生的任何直接、间接、偶然、特殊或后果性损害承担责任，包括但不限于数据丢失、设备损坏或利润损失。</p>
+            </div>
+            <div class="card">
+                <h2>7. 终止</h2>
+                <p>您可随时停止使用并卸载本 App。如果您违反本协议的任何条款，我们保留终止您使用本 App 的权利。</p>
+            </div>
+            <div class="card">
+                <h2>8. 条款变更</h2>
+                <p>我们可能会不时更新本协议。更新后的条款将在相关页面发布，继续使用即视为接受修订后的条款。重大变更我们会通过 App 内通知或 App Store 更新说明向您告知。</p>
+            </div>
+            <div class="card">
+                <h2>9. 法律适用</h2>
+                <p>本协议受中华人民共和国法律管辖并依其解释。因本协议产生的争议，双方应友好协商解决。</p>
+            </div>
+            <div class="card">
+                <h2>10. 联系我们</h2>
+                <p>如对本协议有任何疑问：</p>
+                <p>📧 <a href="mailto:yeextop@163.com">yeextop@163.com</a></p>
+            </div>
+            <div class="update">最后更新日期：2026 年 7 月 23 日</div>
         </div>
 
-        <div class="card">
-            <h2>2. 服务说明</h2>
-            <p>本 App 是一款 iOS 平台的水印工具，提供以下核心功能：</p>
-            <ul>
-                <li>实时拍摄照片和视频并自动叠加时间、位置、天气水印</li>
-                <li>读取相册中已有媒体文件的拍摄元数据，为其补加水印</li>
-                <li>提供多套可自定义的水印模板</li>
-            </ul>
-            <p class="subtitle">所有功能在设备本地运行，无需注册账号，不依赖后端服务。</p>
-        </div>
-
-        <div class="card">
-            <h2>3. 用户责任</h2>
-            <ul>
-                <li>您应确保拥有所处理照片/视频的合法权利（如他人肖像，请先取得授权）</li>
-                <li>您不得将本 App 用于任何违法目的</li>
-                <li>您应自行备份原始媒体文件，我们对因使用本 App 导致的数据丢失不承担责任</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>4. 知识产权</h2>
-            <ul>
-                <li>本 App 的代码、界面设计、图标等知识产权归开发者所有</li>
-                <li>您通过本 App 生成的水印照片/视频，其版权归您所有</li>
-                <li>天气数据由 Apple Weather 提供，受 Apple 服务条款约束</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>5. 免责声明</h2>
-            <ul>
-                <li>本 App 按"现状"提供，不提供任何明示或默示的保证</li>
-                <li>天气数据依赖 Apple WeatherKit 服务，我们不对天气数据的准确性、及时性或可用性作任何保证。天气数据缺失时本 App 会自动隐藏相关水印字段</li>
-                <li>位置信息依赖设备 GPS 功能，室内或信号不佳时定位精度可能受到影响</li>
-                <li>我们不保证本 App 在所有设备上完全无错误或无中断地运行</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>6. 责任限制</h2>
-            <p>
-                在法律允许的最大范围内，开发者不对因使用或无法使用本 App 而产生的任何直接、间接、偶然、特殊或后果性损害承担责任，包括但不限于数据丢失、设备损坏或利润损失。
-            </p>
-        </div>
-
-        <div class="card">
-            <h2>7. 终止</h2>
-            <p>
-                您可随时停止使用并卸载本 App。如果您违反本协议的任何条款，我们保留终止您使用本 App 的权利。
-            </p>
-        </div>
-
-        <div class="card">
-            <h2>8. 条款变更</h2>
-            <p>
-                我们可能会不时更新本协议。更新后的条款将在 App 内发布，继续使用即视为接受修订后的条款。重大变更我们会通过 App 内通知或 App Store 更新说明向您告知。
-            </p>
-        </div>
-
-        <div class="card">
-            <h2>9. 法律适用</h2>
-            <p>本协议受中华人民共和国法律管辖并依其解释。因本协议产生的争议，双方应友好协商解决。</p>
-        </div>
-
-        <div class="card">
-            <h2>10. 联系我们</h2>
-            <p>如对本协议有任何疑问：</p>
-            <p>📧 <a href="mailto:yeextop@163.com">yeextop@163.com</a></p>
-        </div>
-
-        <div class="update">
-            最后更新日期：2026 年 7 月 22 日
+        <div data-lang="en">
+            <div class="card">
+                <h2>1. Acceptance</h2>
+                <p>By downloading, installing, or using Shiyu Camera (the “App”), you agree to these Terms of Use. If you do not agree, please stop using the App and uninstall it.</p>
+            </div>
+            <div class="card">
+                <h2>2. Description of the Service</h2>
+                <p>The App is an iOS watermark utility that provides:</p>
+                <ul>
+                    <li>Live photo and video capture with time, place, and weather watermarks</li>
+                    <li>Watermarking of existing library media using capture metadata</li>
+                    <li>Customizable watermark templates</li>
+                </ul>
+                <p class="subtitle">Features run on your device. No account is required, and the App does not depend on our own backend servers.</p>
+            </div>
+            <div class="card">
+                <h2>3. Your Responsibilities</h2>
+                <ul>
+                    <li>You must have the legal right to process the photos/videos you use (obtain permission for likenesses where required)</li>
+                    <li>You may not use the App for unlawful purposes</li>
+                    <li>You should back up original media; we are not responsible for data loss arising from use of the App</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h2>4. Intellectual Property</h2>
+                <ul>
+                    <li>Code, UI design, and icons of the App belong to the developer</li>
+                    <li>Watermarked photos/videos you create belong to you</li>
+                    <li>Weather data is provided by Apple Weather and subject to Apple’s terms</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h2>5. Disclaimers</h2>
+                <ul>
+                    <li>The App is provided “as is,” without warranties of any kind</li>
+                    <li>Weather depends on Apple WeatherKit; we do not guarantee accuracy, timeliness, or availability. Missing weather fields are hidden automatically</li>
+                    <li>Location depends on device GPS and may be less accurate indoors or with weak signal</li>
+                    <li>We do not guarantee error-free or uninterrupted operation on all devices</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h2>6. Limitation of Liability</h2>
+                <p>To the maximum extent permitted by law, the developer is not liable for any direct, indirect, incidental, special, or consequential damages arising from use of or inability to use the App, including data loss, device damage, or lost profits.</p>
+            </div>
+            <div class="card">
+                <h2>7. Termination</h2>
+                <p>You may stop using and uninstall the App at any time. We may terminate your use of the App if you violate these Terms.</p>
+            </div>
+            <div class="card">
+                <h2>8. Changes</h2>
+                <p>We may update these Terms from time to time. Continued use after updates constitutes acceptance. Material changes may be communicated via in-app notice or App Store release notes.</p>
+            </div>
+            <div class="card">
+                <h2>9. Governing Law</h2>
+                <p>These Terms are governed by the laws of the People’s Republic of China. Disputes should first be resolved through friendly consultation.</p>
+            </div>
+            <div class="card">
+                <h2>10. Contact</h2>
+                <p>Questions about these Terms:</p>
+                <p>📧 <a href="mailto:yeextop@163.com">yeextop@163.com</a></p>
+            </div>
+            <div class="update">Last updated: July 23, 2026</div>
         </div>
 
         <footer>
-            <a href="./privacy.html">← 隐私政策</a>
-            <a href="./support.html">技术支持 →</a>
+            <span data-lang="zh">
+                <a href="./privacy.html">← 隐私政策</a>
+                <a href="./support.html">技术支持 →</a>
+            </span>
+            <span data-lang="en">
+                <a href="./privacy.html">← Privacy Policy</a>
+                <a href="./support.html">Support →</a>
+            </span>
         </footer>
-
     </div>
+    <script src="./lang.js"></script>
 </body>
 </html>
